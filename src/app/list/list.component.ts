@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {RecordsService} from "../shared/records.service";
 
 @Component({
-  selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
 })
-export class TodosComponent implements OnInit {
+export class ListComponent implements OnInit {
 
   public loading: boolean = true;
 

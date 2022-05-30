@@ -26,7 +26,10 @@ export class RecordsService {
     console.log(id);
   }
 
-  removeTransaction(id: number) {
+  removeTransaction(id: number) : void{
+    console.log("Deleting element with id :" + id);
+    this.http.delete(`http://localhost:9000/record/${id}`).pipe()
+      .subscribe(() => console.log("Record deleted"));
     this.records = this.records.filter(t => t.id !== id)
   }
 
