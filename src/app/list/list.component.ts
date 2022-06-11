@@ -9,22 +9,23 @@ import {RecordsService} from "../shared/records.service";
 export class ListComponent implements OnInit {
 
   public loading: boolean = true;
+  public showHide: boolean = true;
 
-  constructor(public todoService: RecordsService) {
+  constructor(public recordsService: RecordsService) {
   }
 
   ngOnInit(): void {
-    this.todoService.fetchRecords().subscribe(() => {
+    this.recordsService.fetchRecords().subscribe(() => {
       this.loading = false;
     });
   }
 
   onChange(id: number) {
-    this.todoService.onToggle(id);
+    this.recordsService.onToggle(id);
   }
 
   removeTodo(id: number){
-    this.todoService.removeTransaction(id);
+    this.recordsService.removeRecod(id);
   }
 
 }
