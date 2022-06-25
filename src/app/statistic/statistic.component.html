@@ -1,1 +1,48 @@
-<p>statistic works!</p>
+
+<div class="container">
+<span>
+  <button (click)="refresh()">REFRESH</button>
+  <span class="span"> Income: {{capIncome}} </span>
+  <span class="span"> Consumption: {{capConsumption}} </span>
+</span>
+
+<div>
+  <dl>
+    <dt>
+      Income Category Statistic
+    </dt>
+    <dd *ngFor="let item of this.incomeStatistic.categoryStatistics; let i = index" class="percentage percentage-{{truncate(item.sum/incomeCategorySum * 100)}}">
+      <span class="text" >{{item.category}} {{truncate(item.sum/incomeCategorySum*100)}}%</span>
+    </dd>
+  </dl>
+</div>
+<div>
+<dl>
+  <dt>
+    Income Flow Type Statistic
+  </dt>
+  <dd *ngFor="let item of this.incomeStatistic.flowTypeStatistics; let i = index" class="percentage percentage-{{truncate(item.sum/incomeFlowTypeSum * 100)}}">
+    <span class="text">{{item.flowType}} {{truncate(item.sum/incomeFlowTypeSum*100)}}%</span>
+  </dd>
+</dl>
+
+  <dl>
+    <dt>
+      Consumption Category Statistic
+    </dt>
+    <dd *ngFor="let item of this.consumptionStatistic.categoryStatistics; let i = index" class="percentage percentage-{{truncate(-1 * item.sum/consumptionCategorySum * 100)}}">
+      <span class="text">{{item.category}} {{truncate(-1 * item.sum/consumptionCategorySum*100)}}%</span>
+    </dd>
+  </dl>
+</div>
+<div>
+  <dl>
+    <dt>
+      Consumption Flow Type Statistic
+    </dt>
+    <dd *ngFor="let item of this.consumptionStatistic.flowTypeStatistics; let i = index" class="percentage percentage-{{truncate(-1 * item.sum/consumptionFlowTypeSum * 100)}}">
+      <span class="text">{{item.flowType}} {{truncate(-1 * item.sum/consumptionFlowTypeSum*100)}}%</span>
+    </dd>
+  </dl>
+</div>
+</div>

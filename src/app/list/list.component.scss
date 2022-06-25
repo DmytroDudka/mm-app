@@ -12,7 +12,7 @@ ul {
     display: flex;
     justify-content: space-between;
     background: #ffffff;
-    border-radius: 50px;
+    border-radius: 5px;
 
     input {
       margin-right: 1rem;
@@ -72,11 +72,17 @@ ul {
   text-align: end;
   font-size: 20px;
   background: #ffffff;
-  border: none;
   float: right;
   margin-top: -60px;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 10px;
+  transition: .5s;
+  border: 1px solid transparent;
 }
 
+.addButton:hover{
+  background-color: white; /* Green */
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
+}
 

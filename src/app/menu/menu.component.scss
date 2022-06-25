@@ -2,6 +2,7 @@
 .topnav {
   background-color: #333;
   overflow: hidden;
+  border: 1px solid;
 }
 
 /* Style the links inside the navigation bar */
@@ -12,6 +13,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  transition: .5s;
 }
 
 /* Change the color of links on hover */
@@ -23,6 +25,13 @@
 /* Create a right-aligned (split) link inside the navigation bar */
 .topnav a.split {
   float: right;
-  background-color: #04AA6D;
+  background-color: #4CAF50;
   color: white;
+  transition: .5s;
+}
+
+.topnav a.split:hover{
+  background-color: white;
+  color: #4CAF50;
+  transition: .5s;
 }

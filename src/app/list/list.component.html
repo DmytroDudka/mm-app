@@ -5,22 +5,22 @@
 <div *ngIf="showHide">
   <div *ngIf="!loading">
     <ul *ngIf="recordsService.records.length; else noTodos">
-      <li *ngFor="let todo of recordsService.records; let i = index">
-        <input type="checkbox" [checked]="todo.completed" (change)="onChange(todo.id)">
+      <li *ngFor="let item of recordsService.records; let i = index">
+        <input type="checkbox" [checked]="item.completed" (change)="onChange(item.id)">
         <strong>{{i + 1}}</strong>
-        <span [class.done]="todo.completed">
-      {{todo.name}}
+        <span [class.done]="item.completed">
+      {{item.name}}
     </span>
-        <span [class.done]="todo.completed">
-      {{todo.category}}
+        <span [class.done]="item.completed">
+      {{item.category}}
     </span>
-        <span [class.done]="todo.completed">
-      {{todo.amount}}
+        <span [class.done]="item.completed">
+      {{item.amount}}
     </span>
-        <span [class.done]="todo.completed">
-        {{todo.creationDate | date:'medium'}}
+        <span [class.done]="item.completed">
+        {{item.creationDate | date:'medium'}}
     </span>
-        <button class="rm" (click)="removeTodo(todo.id)">&times;</button>
+        <button class="rm" (click)="removeTodo(item.id)">&times;</button>
       </li>
     </ul>
     <ng-template #noTodos>

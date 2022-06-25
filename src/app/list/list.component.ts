@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
   }
 
   removeTodo(id: number){
-    this.recordsService.removeRecod(id);
+    this.recordsService.removeRecord(id);
   }
 
 }

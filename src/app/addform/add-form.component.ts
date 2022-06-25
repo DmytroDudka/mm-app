@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {RecordsService} from "../shared/records.service";
-import {AddRecordRequest} from "../models/addRecordRequest";
+import {AddRecordRequest} from "../models/AddRecordRequest";
 
 @Component({
   selector: 'app-addform',
@@ -36,6 +36,5 @@ export class AddFormComponent implements OnInit {
     this.recordsService.createRecord(request);
     location.reload();
   }
-
 
 }
